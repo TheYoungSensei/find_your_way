@@ -1,0 +1,3 @@
+rootProject.name = 'WeekEndCRJ2019'
+
+include ':app'
