@@ -14,7 +14,12 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 type Props = {};
 export default class App extends Component<Props> {
   onRead = (url) => {
-    console.log(url);
+    const urlReg = new RegExp('crjapp:\/\/(.+)');
+    const matching = urlReg.exec(url.data);
+    if (matching) {
+      // This is a CRJ QR Code.
+      console.log(matching[1]);
+    }
   };
 
   render() {
