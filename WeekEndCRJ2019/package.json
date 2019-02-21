@@ -7,7 +7,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "^16.8.2",
+    "acorn": "^6.1.0",
+    "react": "^16.8.3",
     "react-native": "^0.58.5",
     "react-native-camera": "^1.12.0",
     "react-native-gesture-handler": "^1.0.15",
@@ -15,8 +16,18 @@
     "react-navigation": "^3.3.0"
   },
   "devDependencies": {
+    "@types/react": "^16.8.4",
+    "@types/react-native": "^0.57.37",
+    "@types/react-navigation": "^3.0.3",
     "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "24.1.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "jest": "24.1.0",
     "metro-react-native-babel-preset": "^0.52.0",
     "react-test-renderer": "^16.8.2"
