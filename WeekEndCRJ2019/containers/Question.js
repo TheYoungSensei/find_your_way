@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-import { View, Text } from "react-native";
+import { View, Text } from 'react-native';
+
+type Props = {
+  navigation: any,
+}
 
 export default class Question extends Component<Props> {
-
   render() {
-    const id = this.props.navigation.getParam('questionId', -1);
-    console.log(id);
+    const { navigation } = this.props;
+    const id = navigation.getParam('questionId', -1);
     return (
       <View>
-        <Text>Hello {id}</Text>
+        <Text>
+          Hello {id}
+        </Text>
       </View>
     );
   }
