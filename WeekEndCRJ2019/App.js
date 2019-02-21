@@ -9,16 +9,23 @@
 
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
+import Question from './containers/Question';
+
 type Props = {};
-export default class App extends Component<Props> {
+
+class App extends Component<Props> {
   onRead = (url) => {
     const urlReg = new RegExp('crjapp:\/\/(.+)');
     const matching = urlReg.exec(url.data);
+    console.log(matching[1]);
     if (matching) {
       // This is a CRJ QR Code.
-      console.log(matching[1]);
+      this.props.navigation.navigate('Question', {
+        questionId: matching[1]
+      });
     }
   };
 
@@ -49,3 +56,15 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: App,
+    Question: Question
+  },
+  {
+    initialRouteName: 'Home'
+  }
+);
+
+export default createAppContainer(AppNavigator);
