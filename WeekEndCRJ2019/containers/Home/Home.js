@@ -41,7 +41,11 @@ export default class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <QRCodeScanner onRead={this.onRead} />
+        <QRCodeScanner
+          onRead={this.onRead}
+          reactivate
+          reactivateTimeout={1}
+        />
       </View>
     );
   }
