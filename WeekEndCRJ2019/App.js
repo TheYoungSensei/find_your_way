@@ -12,6 +12,7 @@ import { createStackNavigator } from 'react-navigation';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider, connect } from 'react-redux';
 import { logger } from 'redux-logger';
+import SplashScreen from 'react-native-splash-screen';
 import { createReduxContainer, createNavigationReducer, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
 import questions from './redux/reducers/questions';
@@ -54,6 +55,10 @@ const store = createStore(
 );
 
 export default class Root extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+
   render() {
     return (
       <Provider store={store}>
