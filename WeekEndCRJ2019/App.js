@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider, connect } from 'react-redux';
+import { logger } from 'redux-logger';
 import { createReduxContainer, createNavigationReducer, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
 import questions from './redux/reducers/questions';
@@ -49,7 +50,7 @@ const AppWithNavigationState = connect(mapStateToProps)(App);
 
 const store = createStore(
   reducers,
-  applyMiddleware(middleware),
+  applyMiddleware(middleware, logger),
 );
 
 export default class Root extends Component {

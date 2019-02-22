@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { BackHandler, View } from 'react-native';
 import { Text, Button } from 'react-native-elements';
 
 type Props = {
   navigation: any,
   questions: any,
+  back: Function,
 }
 
 const styles = {
@@ -39,6 +40,24 @@ const styles = {
 };
 
 export default class Question extends Component<Props> {
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  onBackPress = () => {
+    const { back, navigation } = this.props;
+    if (navigation.index === 0) {
+      return false;
+    }
+
+    back();
+    return true;
+  };
+
   render() {
     const { navigation, questions } = this.props;
     const id = navigation.getParam('questionId', -1);
