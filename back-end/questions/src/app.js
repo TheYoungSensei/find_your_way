@@ -6,6 +6,8 @@ import questionsRoutes from './routes/question';
 
 import { mockup } from './models/mockups/question';
 
+import { logger } from './utils/logger';
+
 const isDev = process.env.NODE_ENV === 'dev';
 const port = process.env.PORT || 8888;
 const dbUser = process.env.USER;
@@ -30,7 +32,7 @@ mongoose.connect(
   { useNewUrlParser: true },
   (error) => {
     if (error) {
-      console.error('Please make sure Mongodb is installed and running!');
+      logger.error('Please make sure Mongodb is installed and running!');
       throw error;
     }
     if (isDev) {
@@ -42,7 +44,7 @@ mongoose.connect(
 
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.on('error', logger.error.bind(console, 'MongoDB connection error:'));
 
 app.get('*', (req, res, next) => {
   next(new Error(JSON.stringify({ message: 'Unknown route', status: 404 })));
@@ -53,7 +55,7 @@ function errorHandler(err, req, res, next) {
     const error = JSON.parse(err.message);
     return res.status(error.status).json({ error: error.message });
   }).catch((error) => {
-    console.log(error);
+    logger.error(error);
     return res.status(500).json({ error: 'Unexpected error' });
   });
 }
@@ -61,8 +63,8 @@ function errorHandler(err, req, res, next) {
 app.use(errorHandler); // NO MORE app.use AFTER THIS
 
 app.listen(port, () => {
-  console.info(`🌎  Listening on port ${port} in ${process.env.NODE_ENV} mode on Node ${process.version}.`);
+  logger.info(`🌎  Listening on port ${port} in ${process.env.NODE_ENV} mode on Node ${process.version}.`);
   if (isDev) {
-    console.info('Open http://localhost:8888');
+    logger.info('Open http://localhost:8888');
   }
 });
