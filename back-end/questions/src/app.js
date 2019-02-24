@@ -61,6 +61,4 @@ app.listen(port, () => {
   if (isDev) {
     console.info('Open http://localhost:8888');
   }
-
 });
-
