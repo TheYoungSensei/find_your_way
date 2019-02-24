@@ -2,6 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
+import questionsRoutes from './routes/question';
+
+import { mockup } from './models/mockups/question';
+
 const isDev = process.env.NODE_ENV === 'dev';
 const port = process.env.PORT || 8888;
 const dbUser = process.env.USER;
@@ -16,9 +20,7 @@ app.set('view engine', 'pug');
 
 app.set('trust proxy', 1);
 
-app.get('/', (req, res) => {
-  res.send('Hello World !');
-});
+questionsRoutes.setup(app, '/api/questions');
 
 // eslint-disable-next-line no-multi-assign
 exports = module.exports = app;
@@ -32,6 +34,10 @@ mongoose.connect(
     if (error) {
       console.error('Please make sure Mongodb is installed and running!');
       throw error;
+    }
+    if (isDev) {
+      mongoose.connection.db.dropDatabase();
+      mockup();
     }
   },
 );
