@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
 const isDev = process.env.NODE_ENV === 'dev';
 const port = process.env.PORT || 8888;
