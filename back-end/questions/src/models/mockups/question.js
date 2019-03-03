@@ -17,6 +17,7 @@ export function mockup() {
         label: 'Tom Jedusor',
       },
     ],
+    id: 1,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -36,6 +37,7 @@ export function mockup() {
         label: 'Dans le dortoir de Serpentard',
       },
     ],
+    id: 2,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -55,6 +57,7 @@ export function mockup() {
         label: 'Nimbus 2000',
       },
     ],
+    id: 3,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -74,6 +77,7 @@ export function mockup() {
         label: 'Les gommes limaces',
       },
     ],
+    id: 4,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -93,6 +97,7 @@ export function mockup() {
         label: 'Sectum Sempra',
       },
     ],
+    id: 5,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -112,6 +117,7 @@ export function mockup() {
         label: 'Les sangs de bourbes',
       },
     ],
+    id: 6,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -131,6 +137,7 @@ export function mockup() {
         label: 'Au bowling',
       },
     ],
+    id: 7,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -150,6 +157,7 @@ export function mockup() {
         label: 'Défense contre les forces du mal',
       },
     ],
+    id: 8,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -169,6 +177,7 @@ export function mockup() {
         label: 'Une chouette',
       },
     ],
+    id: 9,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -188,6 +197,7 @@ export function mockup() {
         label: '7',
       },
     ],
+    id: 10,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -207,6 +217,7 @@ export function mockup() {
         label: 'Elfes',
       },
     ],
+    id: 11,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -226,6 +237,7 @@ export function mockup() {
         label: 'Bellatrix Lestrange',
       },
     ],
+    id: 12,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -245,6 +257,7 @@ export function mockup() {
         label: 'Une chouette',
       },
     ],
+    id: 13,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -264,6 +277,7 @@ export function mockup() {
         label: 'Mi-loup, mi-hippopotame',
       },
     ],
+    id: 14,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -283,6 +297,7 @@ export function mockup() {
         label: 'Gilderoy Lockhart',
       },
     ],
+    id: 15,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -302,6 +317,7 @@ export function mockup() {
         label: 'Dentiste',
       },
     ],
+    id: 16,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -321,6 +337,7 @@ export function mockup() {
         label: 'Bellatrix Lestrange',
       },
     ],
+    id: 17,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -340,6 +357,7 @@ export function mockup() {
         label: 'Severus Rogue',
       },
     ],
+    id: 18,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -359,6 +377,7 @@ export function mockup() {
         label: '10 ½',
       },
     ],
+    id: 19,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -378,6 +397,7 @@ export function mockup() {
         label: 'Harry Potter et l’ordre du Phénix',
       },
     ],
+    id: 20,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -397,6 +417,7 @@ export function mockup() {
         label: 'Serdaigle',
       },
     ],
+    id: 21,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -416,6 +437,7 @@ export function mockup() {
         label: 'Le basilic',
       },
     ],
+    id: 22,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -435,6 +457,7 @@ export function mockup() {
         label: 'Albus Dumbeldore',
       },
     ],
+    id: 23,
     correctAnswer: 1,
     logicalDelete: false,
   });
@@ -454,6 +477,7 @@ export function mockup() {
         label: 'Poignardé par Bellatrix Lestrange',
       },
     ],
+    id: 24,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -473,6 +497,7 @@ export function mockup() {
         label: 'La cape d’invisibilité',
       },
     ],
+    id: 25,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -492,6 +517,7 @@ export function mockup() {
         label: 'Le souafle',
       },
     ],
+    id: 26,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -511,6 +537,7 @@ export function mockup() {
         label: 'Expecto Patronum',
       },
     ],
+    id: 27,
     correctAnswer: 3,
     logicalDelete: false,
   });
@@ -530,6 +557,7 @@ export function mockup() {
         label: 'Harry Potter et l’ordre du Phénix',
       },
     ],
+    id: 28,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -549,6 +577,7 @@ export function mockup() {
         label: 'Le magasin de farce et attrappes des frères Weasleys',
       },
     ],
+    id: 29,
     correctAnswer: 2,
     logicalDelete: false,
   });
@@ -568,6 +597,7 @@ export function mockup() {
         label: 'Pré-au-lard',
       },
     ],
+    id: 30,
     correctAnswer: 2,
     logicalDelete: false,
   });

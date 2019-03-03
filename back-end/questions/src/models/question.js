@@ -10,6 +10,7 @@ questionSchema.add({
       label: String,
     },
   ],
+  id: Number,
   correctAnswer: Number,
   logicalDelete: Boolean,
 });
