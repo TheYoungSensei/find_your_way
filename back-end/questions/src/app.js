@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import mongoose from 'mongoose';
+import morgan from 'morgan';
 
 import questionsRoutes from './routes/question';
 
@@ -15,8 +17,10 @@ const dbPassword = process.env.PASSWORD;
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
+app.use(morgan('combined'));
 
 app.set('trust proxy', 1);
 

@@ -10,12 +10,14 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from 'react-navigation';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 import { Provider, connect } from 'react-redux';
 import { logger } from 'redux-logger';
 import SplashScreen from 'react-native-splash-screen';
 import { createReduxContainer, createNavigationReducer, createReactNavigationReduxMiddleware } from 'react-navigation-redux-helpers';
 
-import questions from './redux/reducers/questions';
+import questions from './redux/reducers/question';
 
 import Question from './containers/Question';
 import Home from './containers/Home';
@@ -49,10 +51,9 @@ const mapStateToProps = state => ({
 
 const AppWithNavigationState = connect(mapStateToProps)(App);
 
-const store = createStore(
-  reducers,
-  applyMiddleware(middleware, logger),
-);
+const store = createStore(reducers, composeWithDevTools(
+  applyMiddleware(middleware, logger, thunk),
+));
 
 export default class Root extends Component {
   componentDidMount() {

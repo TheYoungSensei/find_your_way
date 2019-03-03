@@ -23,9 +23,15 @@ const styles = StyleSheet.create({
 
 type Props = {
   navigation: any,
+  getQuestions: Function,
 };
 
 export default class Home extends Component<Props> {
+  componentDidMount(): void {
+    const { getQuestions } = this.props;
+    getQuestions();
+  }
+
   onRead = (url) => {
     const urlReg = new RegExp('crjapp://(.+)');
     const matching = urlReg.exec(url.data);

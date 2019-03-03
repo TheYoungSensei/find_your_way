@@ -19,9 +19,11 @@
   "homepage": "https://github.com/TheYoungSensei/find_your_way#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.15",
+    "morgan": "^1.9.1",
     "sanitize-html": "^1.20.0",
     "swagger-ui-express": "^4.0.2",
     "winston": "^3.2.1"
