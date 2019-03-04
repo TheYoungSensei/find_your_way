@@ -33,6 +33,7 @@ export default class Home extends Component<Props> {
   }
 
   onRead = (url) => {
+    console.log(url);
     const urlReg = new RegExp('crjapp://(.+)');
     const matching = urlReg.exec(url.data);
     if (matching) {

@@ -21,11 +21,13 @@ import questions from './redux/reducers/question';
 
 import Question from './containers/Question';
 import Home from './containers/Home';
+import BadAnswer from './containers/BadAnswer';
 
 const AppNavigator = createStackNavigator(
   {
     Home,
     Question,
+    BadAnswer,
   },
   {
     initialRouteName: 'Home',

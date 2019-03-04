@@ -23,7 +23,12 @@ export function getQuestions() {
     dispatch(getQuestionsLoading());
     return get('/api/questions')
       .then((response) => {
-        dispatch(getQuestionsSuccess(response.data.questions));
+        const questions = response.data.questions.reduce((map, obj) => {
+          // eslint-disable-next-line no-param-reassign
+          map[obj.id] = obj;
+          return map;
+        }, {});
+        dispatch(getQuestionsSuccess(questions));
       })
       .catch((error) => {
         dispatch(getQuestionsError(error));
