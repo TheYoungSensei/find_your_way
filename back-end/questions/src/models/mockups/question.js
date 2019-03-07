@@ -18,6 +18,8 @@ export function mockup() {
       },
     ],
     id: 1,
+    latitude: '50.185940',
+    longitude: '4.336060',
     correctAnswer: 3,
     logicalDelete: false,
   });

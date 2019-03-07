@@ -19,11 +19,12 @@ export default class GoodAnswer extends Component<Props> {
 
   render() {
     const id = this.getQuestionId();
+    console.log(id);
     const { questions } = this.props;
     const question = questions[id];
     return (
       <View>
-        <Text>{question.label}</Text>
+        <Text>{question.question}</Text>
       </View>
     );
   }

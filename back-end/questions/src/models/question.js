@@ -13,6 +13,8 @@ questionSchema.add({
   id: Number,
   correctAnswer: Number,
   logicalDelete: Boolean,
+  latitude: String,
+  longitude: String,
 });
 
 export default mongoose.model('Question', questionSchema);
