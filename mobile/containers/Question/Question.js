@@ -39,6 +39,11 @@ const styles = {
 };
 
 export default class Question extends Component<Props> {
+  static navigationOptions = {
+    headerLeft: null,
+    gesturesEnabled: false,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -69,7 +74,7 @@ export default class Question extends Component<Props> {
 
   validate = () => {
     const { selectedRadio } = this.state;
-    const { questions } = this.props;
+    const { questions, navigation } = this.props;
     if (selectedRadio === NOT_SELECTED) {
       this.dropdown.alertWithType('error', 'Error', 'Veuilliez choisir au moins une réponse');
       return;
@@ -77,11 +82,15 @@ export default class Question extends Component<Props> {
     const id = this.getQuestionId();
     const question = questions[id];
     if (selectedRadio !== question.correctAnswer) {
-      const { navigation } = this.props;
       // This is a CRJ QR Code.
-      navigation.navigate('BadAnswer');
+      navigation.replace('BadAnswer', {
+        questionId: id,
+      });
       return;
     }
+    navigation.replace('GoodAnswer', {
+      questionId: id,
+    });
   };
 
   getQuestionId = () => {

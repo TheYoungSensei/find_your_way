@@ -27,6 +27,11 @@ type Props = {
 };
 
 export default class Home extends Component<Props> {
+  static navigationOptions = {
+    headerLeft: null,
+    gesturesEnabled: false,
+  };
+
   componentDidMount(): void {
     const { getQuestions } = this.props;
     getQuestions();
