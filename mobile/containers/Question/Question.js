@@ -49,6 +49,7 @@ export default class Question extends Component<Props> {
       selectedRadio: -1,
     };
   }
+
   onPress = (data) => {
     this.setState({ selectedRadio: data });
   };

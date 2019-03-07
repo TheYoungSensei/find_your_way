@@ -9,10 +9,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    paddingBottom: 30,
   },
   label: {
     marginBottom: 20,
-    color: '#FF0000',
+    color: 'black',
   },
 };
 

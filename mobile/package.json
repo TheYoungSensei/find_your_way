@@ -16,6 +16,7 @@
     "react-native-dropdownalert": "^3.9.2",
     "react-native-elements": "^1.0.0",
     "react-native-gesture-handler": "^1.0.15",
+    "react-native-maps": "^0.23.0",
     "react-native-simple-radio-button": "^2.7.3",
     "react-native-splash-screen": "^3.2.0",
     "react-native-qrcode-scanner": "^1.1.2",
