@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BackHandler, View } from 'react-native';
+import { View } from 'react-native';
 import { Text, Button } from 'react-native-elements';
 import RadioForm from 'react-native-simple-radio-button';
 import DropdownAlert from 'react-native-dropdownalert';
@@ -9,7 +9,6 @@ const NOT_SELECTED = -1;
 type Props = {
   navigation: any,
   questions: any,
-  back: Function,
 }
 
 const styles = {
@@ -50,24 +49,6 @@ export default class Question extends Component<Props> {
       selectedRadio: -1,
     };
   }
-
-  componentDidMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
-  }
-
-  componentWillUnmount() {
-    BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
-  }
-
-  onBackPress = () => {
-    const { back, navigation } = this.props;
-    if (navigation.index === 0) {
-      return false;
-    }
-    back();
-    return true;
-  };
-
   onPress = (data) => {
     this.setState({ selectedRadio: data });
   };
