@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { Button } from 'react-native-elements';
 
 type Props = {
   navigation: any,
@@ -24,9 +25,23 @@ const styles = {
     right: 0,
     bottom: 0,
   },
+  button: {
+    position: 'absolute',
+    top: '70%',
+    alignSelf: 'center',
+  },
+  title: {
+    fontSize: 16,
+  },
+  scanner: {
+    margin: 30,
+    marginTop: 45,
+    width: 120,
+    padding: 10,
+  },
 };
 
-export default class GoodAnswer extends Component<Props> {
+export default class Map extends Component<Props> {
   static navigationOptions = {
     headerLeft: null,
     gesturesEnabled: false,
@@ -35,6 +50,11 @@ export default class GoodAnswer extends Component<Props> {
   getQuestionId = () => {
     const { navigation } = this.props;
     return navigation.getParam('questionId', -1);
+  };
+
+  goToScanner = () => {
+    const { navigation } = this.props;
+    navigation.navigate('Home');
   };
 
   render() {
@@ -63,6 +83,17 @@ export default class GoodAnswer extends Component<Props> {
             }}
           />
         </MapView>
+        <View
+          style={styles.button}
+        >
+          <Button
+            buttonStyle={styles.scanner}
+            titleStyle={styles.title}
+            type="solid"
+            title="Scanner"
+            onPress={this.goToScanner}
+          />
+        </View>
       </View>
     );
   }

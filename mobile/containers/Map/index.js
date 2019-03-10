@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import GoodAnswer from './GoodAnswer';
+import Map from './Map';
 
 const mapStateToProps = state => ({
   questions: state.question.questions,
@@ -8,4 +8,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(GoodAnswer);
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

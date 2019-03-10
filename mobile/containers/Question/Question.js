@@ -58,19 +58,19 @@ export default class Question extends Component<Props> {
     const { selectedRadio } = this.state;
     const { questions, navigation } = this.props;
     if (selectedRadio === NOT_SELECTED) {
-      this.dropdown.alertWithType('error', 'Error', 'Veuilliez choisir au moins une réponse');
+      this.dropdown.alertWithType('error', 'Erreur', 'Veuilliez choisir au moins une réponse');
       return;
     }
     const id = this.getQuestionId();
     const question = questions[id];
     if (selectedRadio !== question.correctAnswer) {
       // This is a CRJ QR Code.
-      navigation.replace('BadAnswer', {
+      navigation.replace('Penalty', {
         questionId: id,
       });
       return;
     }
-    navigation.replace('GoodAnswer', {
+    navigation.replace('Map', {
       questionId: id,
     });
   };

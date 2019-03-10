@@ -21,7 +21,7 @@ type Props = {
   navigation: any,
 };
 
-export default class BadAnswer extends Component<Props> {
+export default class Penalty extends Component<Props> {
   static navigationOptions = {
     headerLeft: null,
     gesturesEnabled: false,
@@ -30,7 +30,7 @@ export default class BadAnswer extends Component<Props> {
   finish = () => {
     const { navigation } = this.props;
     const id = navigation.getParam('questionId', -1);
-    navigation.navigate('GoodAnswer', {
+    navigation.navigate('Map', {
       questionId: id,
     });
   };
