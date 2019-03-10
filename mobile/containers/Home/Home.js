@@ -46,11 +46,9 @@ class Home extends Component<Props> {
     if (matching) {
       const { navigation, isFocused } = this.props;
       console.log(isFocused);
-      if (isFocused) {
-        navigation.navigate('Question', {
-          questionId: matching[1],
-        });
-      }
+      navigation.navigate('Question', {
+        questionId: matching[1],
+      });
       // This is a CRJ QR Code.
     }
   };

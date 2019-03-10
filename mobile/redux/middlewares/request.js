@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://192.168.1.31:8888';
+const URL = 'http://192.168.1.4:8888';
 
 export function get(endpoint, headers) {
   return axios.get(
