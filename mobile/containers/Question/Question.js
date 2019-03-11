@@ -9,6 +9,8 @@ const NOT_SELECTED = -1;
 type Props = {
   navigation: any,
   question: any,
+  correctAnswer: Function,
+  wrongAnswer: Function,
 }
 
 const styles = {
@@ -56,17 +58,24 @@ export default class Question extends Component<Props> {
 
   validate = () => {
     const { selectedRadio } = this.state;
-    const { question, navigation } = this.props;
+    const {
+      question,
+      navigation,
+      wrongAnswer,
+      correctAnswer,
+    } = this.props;
     if (selectedRadio === NOT_SELECTED) {
       this.dropdown.alertWithType('error', 'Erreur', 'Veuilliez choisir au moins une réponse');
       return;
     }
     if (selectedRadio !== question.correctAnswer) {
       // This is a CRJ QR Code.
+      wrongAnswer();
       navigation.replace('Penalty');
-      return;
+    } else {
+      correctAnswer();
+      navigation.replace('Map');
     }
-    navigation.replace('Map');
   };
 
   render() {

@@ -2,7 +2,9 @@ import {
   GET_QUESTIONS_ERROR,
   GET_QUESTIONS_SUCCESS,
   GET_QUESTIONS_LOADING,
-  SCAN_QUESTION
+  SCAN_QUESTION,
+  CORRECT_ANSWER,
+  WRONG_ANSWER,
 } from '../actions/question';
 
 const initialState = {
@@ -10,6 +12,7 @@ const initialState = {
   loading: false,
   questions: {},
   currentQuestion: -1,
+  isCorrect: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -34,7 +37,18 @@ export default function reducer(state = initialState, action) {
     case SCAN_QUESTION:
       return {
         ...state,
+        isCorrect: false,
         currentQuestion: state.questions[action.payload],
+      };
+    case CORRECT_ANSWER:
+      return {
+        ...state,
+        isCorrect: true,
+      };
+    case WRONG_ANSWER:
+      return {
+        ...state,
+        isCorrect: false,
       };
     default:
       return state;

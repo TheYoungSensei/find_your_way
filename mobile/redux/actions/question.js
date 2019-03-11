@@ -4,6 +4,16 @@ export const GET_QUESTIONS_LOADING = '@crjapp/questions/GET_QUESTIONS_LOADING';
 export const GET_QUESTIONS_SUCCESS = '@crjapp/questions/GET_QUESTIONS_SUCCESS';
 export const GET_QUESTIONS_ERROR = '@crjapp/questions/GET_QUESTIONS_ERROR';
 export const SCAN_QUESTION = '@crjapp/questions/SCAN_QUESTION';
+export const CORRECT_ANSWER = '@crjapp/questions/CORRECT_ANSWER';
+export const WRONG_ANSWER = '@crjapp/questions/WRONG_ANSWER';
+
+export const correctAnswer = () => ({
+  type: CORRECT_ANSWER,
+});
+
+export const wrongAnswer = () => ({
+  type: WRONG_ANSWER,
+});
 
 export const scanQuestion = id => ({
   type: SCAN_QUESTION,
