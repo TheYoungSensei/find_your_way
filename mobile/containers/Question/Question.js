@@ -71,11 +71,10 @@ export default class Question extends Component<Props> {
     if (selectedRadio !== question.correctAnswer) {
       // This is a CRJ QR Code.
       wrongAnswer();
-      navigation.replace('Penalty');
     } else {
       correctAnswer();
-      navigation.replace('Map');
     }
+    navigation.replace('Transition');
   };
 
   render() {

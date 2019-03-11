@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Transition from './Transition';
 
 const mapStateToProps = state => ({
-  isSuccess: state.question.isSuccess,
+  isCorrect: state.question.isCorrect,
 });
 
 const mapDispatchToProps = {};
