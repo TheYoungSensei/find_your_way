@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Map from './Map';
 
 const mapStateToProps = state => ({
-  questions: state.question.questions,
+  question: state.question.currentQuestion,
 });
 
 const mapDispatchToProps = {};

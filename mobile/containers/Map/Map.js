@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 
 type Props = {
   navigation: any,
-  questions: Array,
+  question: any,
 }
 
 const styles = {
@@ -47,21 +47,13 @@ export default class Map extends Component<Props> {
     gesturesEnabled: false,
   };
 
-  getQuestionId = () => {
-    const { navigation } = this.props;
-    return navigation.getParam('questionId', -1);
-  };
-
   goToScanner = () => {
     const { navigation } = this.props;
     navigation.navigate('Home');
   };
 
   render() {
-    const id = this.getQuestionId();
-    console.log(id);
-    const { questions } = this.props;
-    const question = questions[id];
+    const { question } = this.props;
     return (
       <View style={styles.container}>
         <MapView

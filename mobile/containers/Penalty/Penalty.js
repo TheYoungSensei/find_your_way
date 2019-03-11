@@ -29,10 +29,7 @@ export default class Penalty extends Component<Props> {
 
   finish = () => {
     const { navigation } = this.props;
-    const id = navigation.getParam('questionId', -1);
-    navigation.navigate('Map', {
-      questionId: id,
-    });
+    navigation.navigate('Map');
   };
 
   render() {

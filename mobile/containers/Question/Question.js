@@ -8,7 +8,7 @@ const NOT_SELECTED = -1;
 
 type Props = {
   navigation: any,
-  questions: any,
+  question: any,
 }
 
 const styles = {
@@ -56,34 +56,21 @@ export default class Question extends Component<Props> {
 
   validate = () => {
     const { selectedRadio } = this.state;
-    const { questions, navigation } = this.props;
+    const { question, navigation } = this.props;
     if (selectedRadio === NOT_SELECTED) {
       this.dropdown.alertWithType('error', 'Erreur', 'Veuilliez choisir au moins une réponse');
       return;
     }
-    const id = this.getQuestionId();
-    const question = questions[id];
     if (selectedRadio !== question.correctAnswer) {
       // This is a CRJ QR Code.
-      navigation.replace('Penalty', {
-        questionId: id,
-      });
+      navigation.replace('Penalty');
       return;
     }
-    navigation.replace('Map', {
-      questionId: id,
-    });
-  };
-
-  getQuestionId = () => {
-    const { navigation } = this.props;
-    return navigation.getParam('questionId', -1);
+    navigation.replace('Map');
   };
 
   render() {
-    const { questions } = this.props;
-    const id = this.getQuestionId();
-    const question = questions[id];
+    const { question } = this.props;
     return (
       <View style={styles.container}>
         <Text h3 style={styles.question}>
