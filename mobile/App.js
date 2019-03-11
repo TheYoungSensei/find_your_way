@@ -23,6 +23,7 @@ import Question from './containers/Question';
 import Home from './containers/Home';
 import Penalty from './containers/Penalty';
 import Map from './containers/Map';
+import Transition from './containers/Transition';
 
 const AppNavigator = createStackNavigator(
   {
@@ -30,6 +31,7 @@ const AppNavigator = createStackNavigator(
     Question,
     Penalty,
     Map,
+    Transition,
   },
   {
     initialRouteName: 'Home',

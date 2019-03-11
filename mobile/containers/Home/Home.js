@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import React, { Component } from 'react';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import { withNavigationFocus } from 'react-navigation';
@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  centerText: {
+    flex: 1,
+    fontSize: 18,
+    padding: 32,
+    color: '#777',
   },
 });
 
@@ -60,6 +66,7 @@ class Home extends Component<Props> {
         <QRCodeScanner
           onRead={this.onRead}
           reactivate
+          style={styles.centerText}
           reactivateTimeout={1}
         />
       );
