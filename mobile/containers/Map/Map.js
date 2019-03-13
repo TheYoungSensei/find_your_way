@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { Button } from 'react-native-elements';
 
 type Props = {
   navigation: any,
   question: any,
+  back: any,
 }
 
 const styles = {
@@ -47,9 +48,27 @@ export default class Map extends Component<Props> {
     gesturesEnabled: false,
   };
 
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  componentWillUnmount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+  }
+
+  onBackPress = () => {
+    const { back, navigation } = this.props;
+    if (navigation.index === 0) {
+      return false;
+    }
+
+    back();
+    return true;
+  };
+
   goToScanner = () => {
     const { navigation } = this.props;
-    navigation.navigate('Home');
+    navigation.push('Home');
   };
 
   render() {
